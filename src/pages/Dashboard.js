@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Queue from '../components/queue'
-import Ranking from '../components/ranking';
-import Graph from '../components/graph';
-import SearchBox from '../components/searchBox';
-import PlanBox from "../components/planBox";
+import Queue from '../components/Queue'
+import Ranking from '../components/Ranking';
+import Graph from '../components/Graph';
+import Customer from '../components/Customer';
+import PlanBox from "../components/Plant";
 import axios from "axios";
 
 
@@ -30,7 +30,7 @@ function Dashboard() {
 
   return (
     // border:'1px dashed'
-    <div className="wrapper" style={{margin:"20px 100px 0px 100px" }}>
+    <div className="wrapper" style={{margin:"30px 100px 0px 100px"  }}>
       <div style={{display:'flex', columnGap:'30px',width:'100%'}}>
         <div>
           <Queue color="#008CFF" title="จำนวนคิวทั้งหมด(วันนี้)" num = {data?.today.toLocaleString()} />
@@ -39,7 +39,7 @@ function Dashboard() {
           
           <Queue color="#05CD85" title="จำนวนคิวทั้งหมด(เดือน)" num = {data?.month.toLocaleString()} />
         
-          <p style={{marginTop:"70px" , fontWeight:"bold", fontSize:"25px"}}>Customers Ranking</p>
+          <p style={{marginTop:"50px" , fontWeight:"bold", fontSize:"25px"}}>Customers Ranking</p>
         
           <Ranking ranking={data?.customer || []} />
 
@@ -47,7 +47,7 @@ function Dashboard() {
 
         <div style={{width:'100%'}}>
           <div>
-            <Graph data={data?.plant || []} today={data?.today} month={data?.month} exToday={data?.exToday || []}/>
+            <Graph data={data?.chartData || []} exToday={data?.exToday || []}/>
           </div>
           <div style={{display:'flex'}}>
             <div className='planGroup' style={{width:'100%'}}>
@@ -55,7 +55,7 @@ function Dashboard() {
                 
             </div>
             <div className="search" style={{width:'60%'}} >
-                <SearchBox data={data?.customer || []}/>
+                <Customer data={data?.customer || []}/>
             </div>
           </div>
         </div>

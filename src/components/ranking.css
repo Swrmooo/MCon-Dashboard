@@ -33,6 +33,20 @@
 
 .filter-item:hover {
     background-color: #f1f1f1;
-    transition: background-color 0.3s ease;
-   
+    transition: background-color 0.3s ease;  
 }
+
+/* ซ่อนแถบเลื่อนใน Firefox */
+.ranking::-webkit-scrollbar {
+    width: 0.2rem;
+  }
+  
+  /* ซ่อนแถบเลื่อนใน Chrome, Edge, Safari */
+  .ranking::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* กำหนดสีแถบเลื่อนใน Chrome, Edge, Safari */
+  .ranking::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }

@@ -1,80 +1,58 @@
-import React, { useEffect, useState } from 'react'
-import {Chart} from "react-google-charts";
+import React, { useEffect, useState } from 'react';
+import { Chart } from 'react-google-charts';
 
-function Graph({data , today , month , exToday}) {
-  
+function Graph({ data }) {
   const [chartData, setChartData] = useState([['Date', 'Value']]);
 
-    
   useEffect(() => {
-    if (month) {
-      const startDate = new Date();
-      startDate.setDate(1);
-      const endDate = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0);
-      const numDays = endDate.getDate();
-  
-      let currentDate = new Date(startDate);
+    if (data && data.length > 0) {
       const updatedChartData = [['Date', 'Value']];
-  
-      for (let i = 0; i < numDays; i++) {
-        const dateString = currentDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-        const value = exToday[i] || 0; 
+      data.forEach(([date, value]) => {
+        const dateString = formatDate(date);
         updatedChartData.push([dateString, value]);
-        currentDate.setDate(currentDate.getDate() + 1);
-      }
-  
+      });
       setChartData(updatedChartData);
     }
-  }, [exToday, month]);
+  }, [data]);
 
-  useEffect(() => {
-    if (chartData.length > 1) {
-      
-    }
-  })
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    return formattedDate;
+  };
 
   const options = {
-      title: "จำนวนคิวทั้งหมดในแต่ละวันของเดือนนี้",
-      
-      chartArea: {width:"90%"},
-  
-      legend:{
-        position : 'none',
-      },
-      hAxis: {
-        slantedText: false,
-        format: 'd MMM',
-        title: '',
-        textStyle: {
-          fontSize: 10, 
-        },
-        titleTextStyle: {
-          fontSize: 15, 
-          
-        },
-      },
-      vAxis: {
-        slantedText: false,
-        title: 'จำนวนคิวทั้งหมดในแต่ละวัน',
-      },
-    
-      colors: ['#90D7FF'],
-      lineWidth: 0,
-      pointSize: 5,
-      pointShape: 'circle',
+    title: 'จำนวนคิวทั้งหมดในแต่ละวันของเดือนนี้',
+    chartArea: { width: '90%' },
+    legend: { position: 'none' },
+    hAxis: {
+      slantedText: false,
+      format: 'd MMM',
+      title: '',
+      textStyle: { fontSize: 10 },
+      titleTextStyle: { fontSize: 15 },
+    },
+    vAxis: {
+      slantedText: false,
+      title: 'จำนวนคิวทั้งหมดในแต่ละวัน',
+    },
+    colors: ['#90D7FF'],
+    lineWidth: 0,
+    pointSize: 5,
+    pointShape: 'circle',
+  };
 
-  }
-  // console.log(JSON.stringify(chartData));
   return (
-    <div >
-      <Chart chartType='AreaChart'
-       data={chartData} 
-       options={options}
-       width={'100%'}
-       height='280px'
+    <div>
+      <Chart
+        chartType="AreaChart"
+        data={chartData}
+        options={options}
+        width={'100%'}
+        height="280px"
       />
-
-      </div>
-  )
+    </div>
+  );
 }
-export default Graph ;
+
+export default Graph;

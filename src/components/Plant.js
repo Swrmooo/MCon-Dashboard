@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import '../components/planBox.css'
+import '../components/Plant.css'
 import plantIcon from '../assets/Plant icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch,faPencilAlt,faSave } from '@fortawesome/free-solid-svg-icons'
 
 
-function PlanBox( {data} ) {
+function Plant( {data} ) {
 
     const [target, setTarget] = useState([
         758, 521, 674, 321, 452, 923, 276, 598, 709, 405, 
@@ -76,7 +76,7 @@ function PlanBox( {data} ) {
     
   return (
     
-    <div className='plant' style={{height:'655px',maxHeight: "655px", overflowY: "auto"}}>
+    <div className='plant' style={{maxHeight: "630px", overflowY: "auto"}}>
 
         <div className='searhBar' style={{position:'fixed',width:'755px',backgroundColor:'white'}}>
             <div style={{position: 'relative'}}>
@@ -170,7 +170,7 @@ function PlanBox( {data} ) {
     </div>
     )
 }
-export default PlanBox ;
+export default Plant ;
 
 
 

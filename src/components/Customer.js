@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../components/searchBox.css'
+import '../components/Customer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch ,faPlus ,faMinus ,faTrash  } from '@fortawesome/free-solid-svg-icons'
 
@@ -40,6 +40,14 @@ const SearchBox = (props) => {
     }
   }, [props.data]);
 
+  const filteredResults = value
+    ? data.filter((item) => {
+      const searchTerm = value.toLowerCase();
+      const word = item.name.toLowerCase();
+      return word.includes(searchTerm);
+    })
+    : data;
+
   const onResultItemClick = (index) => {
     setActiveItem(activeItem === index ? null : index);
   };
@@ -75,43 +83,29 @@ const SearchBox = (props) => {
       </div>
       
       <div className="result" style={{ maxHeight: "600px", overflowY: "auto", marginLeft:'10px' }}>
-          {searchHistory.map((item, index) => {
-             const foundItem = data.find((dataItem) => dataItem.name.toLowerCase() === item.toLowerCase());
-            if (foundItem) {
-                const isActive = index === activeItem;
+        {filteredResults.map((item, index) => (
+          <div key={item.id} className={`result-item ${activeItem === index ? 'active' : ''}`} onClick={() => onResultItemClick(index)}>
+            <div style={{display:'flex', justifyContent:'space-around'}}>
+              <p>{item.name}</p>
+              <p>{item.total.toLocaleString()} คิว <FontAwesomeIcon icon={activeItem === index ? faMinus : faPlus} className="plus" /></p>
+            </div>
+            
+            {activeItem === index && (
+              <div> {item.numIn.map((customer, i) => {
+                const team = Object.keys(customer)[0];
+                const number = Object.values(customer)[0];
                 return (
-                  <div className={`result-item ${isActive ? 'active' : ''}`} style={{marginTop:'10px'}} key={index} onClick={() => onResultItemClick(index)}>
-                      <div className="result-content">
-                        <FontAwesomeIcon icon={faTrash} className="delete-icon" onClick={() => onDeleteItemClick(index)} />
-                        <div style={{display: 'flex', justifyContent: 'space-around'}}>
-                          <p> {foundItem.name } </p>
-                          <p> {foundItem.total.toLocaleString()} คิว<FontAwesomeIcon className={`plus ${isActive ? "minus" : ""}`} icon={isActive ? faMinus : faPlus} style={{ marginLeft: '20px'}} /> </p>
-                        
-                        </div>
-                      </div>
-                      
-                      {isActive && (
-                        <div className="result-item-detail" style={{backgroundColor:'white',borderRadius: "10px 10px 10px 10px"}}>
-                          {foundItem.numIn.map((numItem, numIndex) => {
-                            const teamName = Object.keys(numItem)[0];
-                            const teamValue = Object.values(numItem)[0];
-                            
-
-                            return (
-                              <div style={{ display: 'flex', justifyContent: 'space-around', fontSize: '18px' }} key={numIndex}>
-                                <p>{teamName}</p>
-                                <p>{teamValue.toLocaleString()} คิว</p>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
-                  </div>
+                  <div className="result-content" key={i}>
+                    <p>{`${team}`}</p>
+                    <p>{`${number}`}คิว</p>
+                </div>
                 );
-              }
-            return null;
-            })}    
-        </div>
+              })}
+              </div>
+            )}  
+          </div>
+          ))}
+      </div>
     </div>
   )
 }

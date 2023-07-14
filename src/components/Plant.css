@@ -72,7 +72,21 @@
   border: 1px solid lightblue;
   border-radius: 5px 5px 5px 5px;
 }
-  
+
+/* ซ่อนแถบเลื่อนใน Firefox */
+.plant::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+/* ซ่อนแถบเลื่อนใน Chrome, Edge, Safari */
+.plant::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* กำหนดสีแถบเลื่อนใน Chrome, Edge, Safari */
+.plant::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
 
 
   

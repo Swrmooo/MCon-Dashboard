@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../components/ranking.css'
+import '../components/Ranking.css'
 import firstIcon from '../assets/Icon Ranking_Rank 1.png';
 import secondIcon from '../assets/Icon Ranking_Rank 2.png';
 import thirdIcon from '../assets/Icon Ranking_Rank 3.png';
@@ -45,8 +45,8 @@ const Ranking = (props) => {
   }
   // {selectedOption}
   return (
-    <div style={{borderRadius: "5px 5px 0px 0px",boxShadow: "0px 1px 3px grey", width: "100%",textAlign: "center",maxHeight: "380px", overflowY: "auto",position: "relative",}}>
-      <div className='ranking-filter' style={{position:''}} onClick={toggleDropdown} >
+    <div className="ranking" style={{borderRadius: "5px 5px 0px 0px",boxShadow: "0px 1px 3px grey", width: "100%",textAlign: "center",maxHeight: "380px", overflowY: "auto",position: "relative",}}>
+      <div className='ranking-filter' onClick={toggleDropdown} >
         {selectedOption}
         <FontAwesomeIcon icon={faCaretDown} style={{marginLeft:'20px'}}/> 
         {/* {selectedOption} {previewText && ` - ${previewText}`} */}

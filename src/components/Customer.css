@@ -1,9 +1,10 @@
 .dropdown {
     position: absolute;
+    /* min-width: 200px; */
     width: 440px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* z-index: 1; */
+    z-index: 1;
     text-align: left;
     max-height: 200px;
     overflow-y: auto;
@@ -25,12 +26,15 @@
   }
 
   .result-item {
+    /* display: flex; */
+    justify-content: space-between;
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
     padding: 25px;
+    margin-top: 10px;
     background-color: #f9f9f9;
-    border-radius: 10px 10px 10px 10px; 
+    border-radius: 5px 5px 5px 5px;
     transition-duration: 0.5s;
   }
 
@@ -40,8 +44,23 @@
   }
 
   .result-item.active {
-    border: 1px solid lightgray;
+    background-color: #e7e7e7;
   }
+
+  /* ซ่อนแถบเลื่อนใน Firefox */
+.result::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+/* ซ่อนแถบเลื่อนใน Chrome, Edge, Safari */
+.result::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* กำหนดสีแถบเลื่อนใน Chrome, Edge, Safari */
+.result::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
 
   .plus {
     margin-left: 20px;
@@ -83,4 +102,9 @@
     color: #cb0000;
     height: 20px;
     transition: 0.3s;
+  }
+
+  .result-content {
+    display: flex;
+    justify-content: space-around;
   }
