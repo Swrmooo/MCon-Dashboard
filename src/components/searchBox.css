@@ -1,0 +1,86 @@
+.dropdown {
+    position: absolute;
+    width: 440px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* z-index: 1; */
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 37px;
+    line-height: 2;
+    border-radius: 20px;
+  }
+
+.dropdown-item {
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 20px 20px 20px 20px;
+  }
+
+  .dropdown-item:hover {
+    background-color: #f1f1f1;
+    border-radius: 20px 20px 20px 20px;
+  }
+
+  .result-item {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 10px 10px 10px 10px; 
+    transition-duration: 0.5s;
+  }
+
+  .result-item:hover {
+    background-color: #f2f2f2;
+    border-radius: 10px 10px 10px 10px; 
+  }
+
+  .result-item.active {
+    border: 1px solid lightgray;
+  }
+
+  .plus {
+    margin-left: 20px;
+    color: grey;
+  }
+
+  .result-item:hover .plus {
+    color: #ffdd00;
+    
+  }
+  
+  .result-item .minus {
+    color: #cb0000;
+  }
+
+  .result-item.closed {
+    display: none;
+  }
+  
+  .result-item.open {
+    display: block;
+  }
+  
+  .result-item.active {
+    width: auto;
+  }
+
+  .delete-icon {
+    color: black;
+    cursor: pointer;
+    margin: -15px 0px 0px -20px;
+    display: flex;
+    /* border: 1px dashed; */
+    width: 30px;
+    height: 15px;
+  }
+
+  .delete-icon:hover {
+    color: #cb0000;
+    height: 20px;
+    transition: 0.3s;
+  }

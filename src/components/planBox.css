@@ -1,0 +1,82 @@
+.searchBar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    padding: 4px;
+  }
+  
+  .searchBar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .searchBar button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 8px;
+  }
+  
+
+  .Box-item{
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0px 2px 3px grey;
+    width: 350px;
+    height: 200px;
+    
+  }
+
+  .Box-item .Box-header {
+    border-radius: 5px 5px 0px 0px;
+    font-size: 20px;
+    color: white;
+    background-color: #055ACB;
+    padding: 10px;
+    
+  }
+
+  .ranking-item {
+    border: 2px solid lightgrey;
+    width: 150px;
+    height: 37px;
+    border-radius: 18px;
+    font-size: 18px;
+    color: grey;
+    text-align-last: center;
+  }
+
+  .ranking-item option  {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+  }
+
+  .Box-bottom .icon {
+    color: rgb(194, 65, 10);
+    cursor: pointer;
+  } 
+
+  .icon:hover {
+    height: 25px;
+    transition: 0.2s;
+  }
+
+.edit-target {
+  width: 70px;
+  font-size: 20px;
+  text-align-last: center;
+  border: 1px solid lightblue;
+  border-radius: 5px 5px 5px 5px;
+}
+  
+
+
+  
+
+  
+
+ 
