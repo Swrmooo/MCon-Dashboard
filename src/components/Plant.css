@@ -52,6 +52,7 @@
 
   .ranking-item option  {
     font-size: 20px;
+    color: rgba(0, 0, 0, 0.523);
     color: rgb(0, 0, 0);
   }
 
@@ -88,9 +89,31 @@
   background-color: transparent;
 }
 
+.custom-swal-container {
+  min-height: 100px;
+}
 
+.custom-swal-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #055ACB;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.custom-swal-content {
   
+}
 
+.custom-swal-text {
+  /* border: 1px dashed green; */
+}
+
+.custom-swal-confirm {
+  background-color: #055ACB;  
   
-
- 
+}

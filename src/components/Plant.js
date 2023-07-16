@@ -3,6 +3,7 @@ import '../components/Plant.css'
 import plantIcon from '../assets/Plant icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch,faPencilAlt,faSave } from '@fortawesome/free-solid-svg-icons'
+import Swal from 'sweetalert2'
 
 
 function Plant( {data} ) {
@@ -72,14 +73,60 @@ function Plant( {data} ) {
         
           return filteredData;
       };
+      // CommonJS
+    const Swal = require('sweetalert2')
+    
+    const handleBoxItemClick = (index) => {
+        const plant = filterData(data)[index];
+        const textArr = [];
+        const numberArr = [];
+        var text = "";
 
+        for (let i = 0; i < plant.numOut.length; i++) {
+            for (let key in plant.numOut[i]) {
+              const value = plant.numOut[i][key];
+            //   textArr.push(`${key}`);
+            //   numberArr.push(value);
+            //   text += key+" "+value+"\n";
+            text +=(`<div style="color: black; display: flex; justify-content: space-between; font-size: 25px; padding: 0px; margin: 0px;">
+                <p> ${key} </p>
+                <p> ${value} </p>
+            </div>  </br>`);
+            }
+          }
+        
+        Swal.fire({
+            title: plant.name,
+            // text: `ข้อความ: ${text}`,
+            html: `
+                <div class="custom-swal-title">${plant.name}</div>
+                <div class="custom-swal-text">
+                ${text}
+                </div>
+                `,
+            width: 700,
+            padding: '4em',
+            color: '#055ACB',
+            backdrop: `rgba(0, 0, 0, 0.5) `,
+            confirmButtonColor: '#055ACB',
+            customClass: {
+                container: 'custom-swal-container',
+                title: 'custom-swal-title',
+                content: 'custom-swal-content',
+                // confirmButtonText: 'Yes, delete it!'
+                confirmButton: 'custom-swal-confirm-button',
+                
+              },
+        });
+        };
+      
     
   return (
     
     <div className='plant' style={{maxHeight: "630px", overflowY: "auto"}}>
 
         <div className='searhBar' style={{position:'fixed',width:'755px',backgroundColor:'white'}}>
-            <div style={{position: 'relative'}}>
+            <div style={{position: 'relative',color:"black"}}>
                 <FontAwesomeIcon icon={faSearch} style={{color:'lightgrey' , position: 'absolute', left: '15px', top: '50%', transform: 'translateY(70%)'}} />
             </div>
             <div style={{display:'flex'}}>
@@ -112,14 +159,14 @@ function Plant( {data} ) {
 
         <div className='Box' style={{display:'grid',gridTemplateColumns:'1fr 1fr', rowGap:'10px' ,textAlign:"center", marginTop:'50px'}} >
             {filterData(data).map((plantData, index) => (
-                <div className='Box-item' key={plantData.name} >
+                <div className='Box-item' key={plantData.name} onClick={() => handleBoxItemClick(index)}>
                     <div className='Box-header'>{plantData.name}</div>
                     <div>
                         <div style={{display:'flex',flexDirection:'row',justifyContent:'space-around',marginTop:'30px'}}>
                             <div><img style={{width:'80px'}} src={plantIcon} alt="Plant Icon" /></div>
                             <div className='delivery'>
-                                <div style={{color:'#2690E8', fontWeight:'bold'}}>Delivery Volume:</div>
-                                <div style={{color:'#2690E8', fontWeight:'bold',fontSize:'45px'}}>{plantData.total.toLocaleString()}</div>
+                                <div style={{color:'#255294', fontWeight:'bold'}}>Delivery Volume:</div>
+                                <div style={{color:'#255294', fontWeight:'bold',fontSize:'45px'}}>{plantData.total.toLocaleString()}</div>
                             </div>
                         </div>
                     </div>
