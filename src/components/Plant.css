@@ -56,6 +56,11 @@
     color: rgb(0, 0, 0);
   }
 
+  .Box-item:hover {
+    background-color: #f2f2f2;
+    cursor: pointer;
+  }
+
   .Box-bottom .icon {
     color: rgb(194, 65, 10);
     cursor: pointer;

@@ -4,7 +4,7 @@ import plantIcon from '../assets/Plant icon.png';
 
 function Queue(props) {
   return (
-    <div style={{backgroundColor: props.color ,display:"flex",flexDirection:"column",borderRadius:"5px 5px 0px 0px", boxShadow:"0px 1px 3px grey", width:"100%", height:"200px", textAlign:"center"}} className='box'>
+    <div style={{backgroundColor: props.color ,display:"flex",flexDirection:"column",borderRadius:"5px 5px 5px 5px", boxShadow:"0px 1px 2px grey", width:"100%", height:"200px", textAlign:"center"}} className='box'>
 
         <h1 style={{borderRadius:"5px 5px 0px 0px", color:"white", fontSize:"22px",padding:"10px 100px",width:"250px" }} className=':"box-header'>{props.title}</h1>   
        

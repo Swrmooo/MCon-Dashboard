@@ -45,7 +45,7 @@ const Ranking = (props) => {
   }
   // {selectedOption}
   return (
-    <div className="ranking" style={{borderRadius: "5px 5px 0px 0px",boxShadow: "0px 1px 3px grey", width: "100%",textAlign: "center",maxHeight: "380px", overflowY: "auto",position: "relative",}}>
+    <div className="ranking" style={{borderRadius: "5px 5px 5px 5px",boxShadow: "0px 1px 3px grey", width: "100%",textAlign: "center",maxHeight: "380px", overflowY: "auto",position: "relative",}}>
       <div className='ranking-filter' onClick={toggleDropdown} >
         {selectedOption}
         <FontAwesomeIcon icon={faCaretDown} style={{marginLeft:'20px'}}/> 
