@@ -33,8 +33,8 @@ const Ranking = (props) => {
         return sortedRanking.slice(0, 5);
       case "Top 10":
         return sortedRanking.slice(0, 10);
-      case "All":
-        return sortedRanking;
+      case "Top 100":
+        return sortedRanking.slice(0, 100);
       default:
         return sortedRanking.slice(0, 5);
     }
@@ -61,9 +61,9 @@ const Ranking = (props) => {
                 style={{ padding: "5px 30px 5px 30px" }} onClick={() => handleOptionChange("Top 10")} onMouseEnter={() => handleHover("Top 10")}>
                 2. Top 10
               </div>
-              <div className={`filter-item ${selectedOption === "All" ? "active" : ""}`}
-                style={{ padding: "5px 30px 5px 30px" }} onClick={() => handleOptionChange("All")} onMouseEnter={() => handleHover("All")}>
-                3. All
+              <div className={`filter-item ${selectedOption === "Top 100" ? "active" : ""}`}
+                style={{ padding: "5px 30px 5px 30px" }} onClick={() => handleOptionChange("Top 100")} onMouseEnter={() => handleHover("Top 100")}>
+                3. Top 100
               </div>
             </div>
           )}
