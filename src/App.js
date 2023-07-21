@@ -10,7 +10,7 @@ import Dash5 from './pages/Dash5';
 function App() {
   return (
    <div>
-    <Router>
+    {/* <Router>
       <Routes>
         <Route path="/" element={<Dash1/>}>
           <Route index element={<Dash2/>} />
@@ -19,9 +19,9 @@ function App() {
           <Route path="*" element={<Dash5/>} />
         </Route>
       </Routes>
-    </Router>
+    </Router> */}
     {/* <Dash1/> */}
-    {/* <Dash2/> */}
+    <Dash2/>
     {/* <Dash3/> */}
     {/* <Dash4/> */}
     {/* <Dash5/> */}
