@@ -96,16 +96,14 @@ function Plant( {data} ) {
           }
         
         Swal.fire({
-            title: plant.name,
-            // text: `ข้อความ: ${text}`,
             html: `
-                <div class="custom-swal-title">${plant.name}</div>
+                <div class="custom-swal-title">แพล้นท์${plant.name}</div>
                 <div class="custom-swal-text">
                 ${text}
                 </div>
                 `,
-            width: 700,
-            padding: '4em',
+            width: 400,
+            padding: '2em',
             color: '#055ACB',
             backdrop: `rgba(0, 0, 0, 0.5) `,
             confirmButtonColor: '#055ACB',
@@ -113,7 +111,6 @@ function Plant( {data} ) {
                 container: 'custom-swal-container',
                 title: 'custom-swal-title',
                 content: 'custom-swal-content',
-                // confirmButtonText: 'Yes, delete it!'
                 confirmButton: 'custom-swal-confirm-button',
                 
               },
@@ -160,7 +157,7 @@ function Plant( {data} ) {
         <div className='Box' style={{display:'grid',gridTemplateColumns:'1fr 1fr', rowGap:'10px' ,textAlign:"center", marginTop:'50px'}} >
             {filterData(data).map((plantData, index) => (
                 <div className='Box-item' key={plantData.name} onClick={() => handleBoxItemClick(index)}>
-                    <div className='Box-header'>{plantData.name}</div>
+                    <div className='Box-header'>แพล้นท์{plantData.name}</div>
                     <div>
                         <div style={{display:'flex',flexDirection:'row',justifyContent:'space-around',marginTop:'30px'}}>
                             <div><img style={{width:'80px'}} src={plantIcon} alt="Plant Icon" /></div>

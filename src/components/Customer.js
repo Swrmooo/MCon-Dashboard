@@ -86,7 +86,7 @@ const SearchBox = (props) => {
         {filteredResults.map((item, index) => (
           <div key={item.id} className={`result-item ${activeItem === index ? 'active' : ''}`} onClick={() => onResultItemClick(index)}>
             <div style={{display:'flex', justifyContent:'space-around'}}>
-              <p>{item.name}</p>
+              <p>บริษัท {item.name}</p>
               <p>{item.total.toLocaleString()} คิว <FontAwesomeIcon icon={activeItem === index ? faMinus : faPlus} className="plus" /></p>
             </div>
             

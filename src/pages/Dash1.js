@@ -7,13 +7,13 @@ import PlanBox from "../components/Plant";
 import axios from "axios";
 
 
-function Dashboard() {
+function Dash1() {
 
   const [data, setData] = useState(null);
 
   useEffect(() => {
     
-    axios.get('../data/dashboard.json').then((response) => {
+    axios.get('../data/Data1.json').then((response) => {
         console.log(response)
         setTimeout(() => {
           setData(response.data)
@@ -63,4 +63,4 @@ function Dashboard() {
     </div>
   )
 }
-export default Dashboard ;
+export default Dash1 ;

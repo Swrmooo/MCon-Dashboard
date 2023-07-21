@@ -38,15 +38,17 @@
 
 /* ซ่อนแถบเลื่อนใน Firefox */
 .ranking::-webkit-scrollbar {
-    width: 0.2rem;
+    width: 0px;
   }
   
   /* ซ่อนแถบเลื่อนใน Chrome, Edge, Safari */
   .ranking::-webkit-scrollbar-track {
+    width: 0px;
     background: transparent;
   }
   
   /* กำหนดสีแถบเลื่อนใน Chrome, Edge, Safari */
   .ranking::-webkit-scrollbar-thumb {
+    width: 0px;
     background-color: transparent;
   }
