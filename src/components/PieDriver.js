@@ -3,7 +3,7 @@ import { Chart } from "react-google-charts"
 
 export default function pie( {data} ) {
 
-    const dataWorker = data?.working || [];
+    const dataWorker = data?.driverTotal || [];
     const inValue = dataWorker.length > 0 ? dataWorker[0].in : 0;
     const outValue = dataWorker.length > 0 ? dataWorker[0].out : 0;
 

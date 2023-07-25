@@ -22,9 +22,9 @@ function App() {
     </Router> */}
     {/* <Dash1/> */}
     {/* <Dash2/> */}
-    <Dash3/>
+    {/* <Dash3/> */}
     {/* <Dash4/> */}
-    {/* <Dash5/> */}
+    <Dash5/>
    </div>
   );
 }

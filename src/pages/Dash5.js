@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Pie from '../components/PieDriver'
 import Bar from '../components/BarDriver'
-import List from '../components/TableDriver'
+import Table from '../components/TableDriver'
 import axios from 'axios'
 import '../components/Remove.css'
 import BarChart from '../components/BarChart'
@@ -35,7 +35,7 @@ export default function Dashboard() {
               <Bar data={data}/>
             </div>
             <div style={{}}>
-                <List  data={data}/>
+                <Table  data={data}/>
             </div>
        </div>
   

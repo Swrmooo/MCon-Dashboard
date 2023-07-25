@@ -18,11 +18,6 @@ function Radia({  num, numTotal, title, colors }) {
     pieHole: 0.6,
     pieStartAngle: 270,
     pieSliceText: 'value',
-      legend: {
-        position: 'labeled'
-      },
-
-    backgroundColor: 'transparent',
     pieSliceTextStyle:{
       fontSize: 20,
       color: 'red',
