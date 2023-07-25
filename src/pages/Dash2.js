@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import List from '../components/ListD2'
+import Table from '../components/TableStatus'
 import axios from 'axios'
 
 
@@ -18,7 +18,7 @@ export default function Dash2() {
 
   return (
     <div className='wrapper' style={{margin:"30px 200px 0 200px"}}>
-        <List data={data}/>
+        <Table data={data}/>
         
     </div>
   )

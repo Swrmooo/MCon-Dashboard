@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Queue from '../components/Queue'
-import Ranking from '../components/Ranking';
-import Graph from '../components/Graph';
-import Customer from '../components/Customer';
-import PlanBox from "../components/Plant";
+import QBox from '../components/QBox'
+import Ranking from '../components/CusRanking';
+import Chart from '../components/AreaChart';
+import Customer from '../components/CusFilter';
+import Plant from "../components/Plant";
 import axios from "axios";
 
 
@@ -30,31 +30,31 @@ function Dash1() {
 
   return (
     // border:'1px dashed'
-    <div className="wrapper" style={{margin:"30px 100px 0px 100px"  }}>
-      <div style={{display:'flex', columnGap:'30px',width:'100%'}}>
+    <div className="wrapper" style={{margin:"40px 100px 0px 110px"}}>
+      <div style={{display:'flex', columnGap:'50px'}}>
         <div>
-          <Queue color="#008CFF" title="จำนวนคิวทั้งหมด(วันนี้)" num = {data?.today.toLocaleString()} />
+          <QBox color="#5CA0DE" title="จำนวนคิวทั้งหมด(วันนี้)" num = {data?.today.toLocaleString()} />
           
           <br />
           
-          <Queue color="#05CD85" title="จำนวนคิวทั้งหมด(เดือน)" num = {data?.month.toLocaleString()} />
+          <QBox color="#48C7A1" title="จำนวนคิวทั้งหมด(เดือน)" num = {data?.month.toLocaleString()} />
         
-          <p style={{marginTop:"50px" , fontWeight:"bold", fontSize:"25px"}}>Customers Ranking</p>
+          <p style={{marginTop:"40px", fontWeight:"bold", fontSize:"25px"}}>Customers Ranking</p>
         
           <Ranking ranking={data?.customer || []} />
 
         </div>
 
-        <div style={{width:'100%'}}>
-          <div>
-            <Graph data={data?.chartData || []} exToday={data?.exToday || []}/>
+        <div>
+          <div style={{}}>
+            <Chart data={data?.chartData || []} exToday={data?.exToday || []}/>
           </div>
-          <div style={{display:'flex'}}>
-            <div className='planGroup' style={{width:'100%'}}>
-              <PlanBox data={data?.plant || []} />
+          <div style={{display:'flex',columnGap:'80px'}}>
+            <div style={{}}>
+              <Plant data={data?.plant || []} />
                 
             </div>
-            <div className="search" style={{width:'60%'}} >
+            <div style={{}}>
                 <Customer data={data?.customer || []}/>
             </div>
           </div>

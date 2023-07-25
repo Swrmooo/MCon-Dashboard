@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../components/Customer.css'
+import '../components/CusFilter.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch ,faPlus ,faMinus ,faTrash  } from '@fortawesome/free-solid-svg-icons'
 
@@ -61,15 +61,15 @@ const SearchBox = (props) => {
 
   return (
     <div style={{display:"flex",flexDirection:"column", width:'100%' ,textAlign:"center"}} className='box'>
-      <div style={{display:"flex",marginLeft:'10px'}} className='search-bar'>
+      <div style={{}} className='search-bar'>
         <div style={{position: 'relative'}}>
-          <FontAwesomeIcon icon={faSearch} style={{color:'lightgrey' , position: 'absolute', left: '15px', top: '50%', transform: 'translateY(-50%)'}} />
+          <FontAwesomeIcon icon={faSearch} style={{color:'lightgrey' , position: 'absolute', left: '15px', top: '18px', transform: 'translateY(-50%)'}} />
         </div>
         <input style={{borderRadius:"20px 20px 20px 20px", border:'2px solid lightgrey', width:'400px',fontSize:'20px', padding:'5px 0px 5px 40px' ,
         backgroundSize: "10px 20px",}}  type="text" value={value} onChange={onChange} placeholder="ค้นหา บริษัท"/>   
       </div>
 
-      <div className="dropdown" >
+      <div className="dropdown" style={{right:'280px',position:''}}>
         {value && data.filter(item => {
           const searchTerm = value.toLowerCase();
           const word = item.name.toLowerCase();
@@ -82,7 +82,7 @@ const SearchBox = (props) => {
         </div> )))}
       </div>
       
-      <div className="result" style={{ maxHeight: "600px", overflowY: "auto", marginLeft:'10px' }}>
+      <div className="result" style={{ maxHeight: "540px", overflowY: "auto"}}>
         {filteredResults.map((item, index) => (
           <div key={item.id} className={`result-item ${activeItem === index ? 'active' : ''}`} onClick={() => onResultItemClick(index)}>
             <div style={{display:'flex', justifyContent:'space-around'}}>

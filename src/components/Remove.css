@@ -1,0 +1,38 @@
+
+.ranking::-webkit-scrollbar {
+  width: 0px;
+}
+
+.ranking::-webkit-scrollbar-track {
+  width: 0px;
+  background: transparent;
+}
+
+.ranking::-webkit-scrollbar-thumb {
+  width: 0px;
+  background-color: transparent;
+}
+/* Dash2 */
+.table-body:hover{
+  background-color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+
+.table::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+.table::-webkit-scrollbar-track {
+  width: 0px;
+  background: transparent;
+}
+
+
+.table::-webkit-scrollbar-thumb {
+  width: 0px;
+  background-color: transparent;
+}
+  

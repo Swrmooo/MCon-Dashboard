@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Pie from '../components/PieD4'
-import List from '../components/ListD4'
-import Ranking from '../components/RankingD4'
+import Pie from '../components/PieGreen'
+import Table from '../components/DriverTable'
+import Ranking from '../components/DriverRanking'
 import axios from 'axios'
 
 export default function Dashboard() {
@@ -29,7 +29,7 @@ export default function Dashboard() {
         </div>
 
         <div style={{width:'100%'}}>
-            <List  data={data}/>
+            <Table  data={data}/>
         </div>
             
     </div>

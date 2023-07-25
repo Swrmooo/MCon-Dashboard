@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import '../components/RemoveScrollBar.css'
+import '../components/Remove.css'
 
 function createData(num, name, transport, q, km) {
   return { num, name, transport, q ,km };
@@ -32,7 +32,7 @@ export default function List( {data}) {
 
   return (
 
-    <div className='ranking' style={{boxShadow:'0px 2px 5px lightgrey',borderRadius:'5px 5px 5px 5px',maxHeight: '860px', overflowY: "auto"}}>
+    <div className='table' style={{boxShadow:'0px 2px 5px lightgrey',borderRadius:'5px 5px 5px 5px',maxHeight: '860px', overflowY: "auto"}}>
       <TableContainer component={Paper} style={{ marginTop:'',boxShadow:'0px 0px 0px' }} >
       <Table s aria-label="simple table">
         <TableHead >

@@ -25,8 +25,8 @@
 
   .Box-item{
     border-radius: 5px 5px 5px 5px;
-    box-shadow: 0px 2px 3px grey;
-    width: 350px;
+    box-shadow: 0px 5px 5px lightgrey;
+    width: 330px;
     height: 200px;
     
   }
@@ -35,7 +35,7 @@
     border-radius: 5px 5px 0px 0px;
     font-size: 20px;
     color: white;
-    background-color: #055ACB;
+    background-color: #316DC6;
     padding: 10px;
     
   }

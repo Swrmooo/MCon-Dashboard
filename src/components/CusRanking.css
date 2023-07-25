@@ -29,6 +29,7 @@
     font-weight: normal;
     font-size: 20px;
     border-radius: 0px 0px 10px 10px;
+    transition: 1s;
 }
 
 .filter-item:hover {
@@ -47,7 +48,7 @@
     background: transparent;
   }
   
-  /* กำหนดสีแถบเลื่อนใน Chrome, Edge, Safari */
+  /* กำหนด2สีแถบเลื่อนใน Chrome, Edge, Safari */
   .ranking::-webkit-scrollbar-thumb {
     width: 0px;
     background-color: transparent;

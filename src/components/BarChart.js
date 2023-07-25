@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Chart } from 'react-google-charts';
 
-function BarD3 ({  data }) {
+function BarChart ({  data }) {
   
   var chartData = [
     ['แพล้นท์', 'จำนวนคิว(คิว)', { role: 'annotation' }, 'จำนวนพนักงาน(คน)', { role: 'annotation' }, 'จำนวนรถโม่ปูน(คัน)', { role: 'annotation' }],
@@ -29,22 +29,21 @@ function BarD3 ({  data }) {
       alwaysOutside: true,
       stem: { length: 0 },
       textStyle: {
-        
         fontSize: 12,
         bold: true,
         color: 'black',
         auraColor: 'transparent', 
       },
-      // boxStyle:{
-      //   rx: 4,
-      //   ry: 4,
-      //   // stroke: '#2C90EE',
-      //   strokeWidth: 2,
-      //   gradient: {
-      //     color1: '#2C90EE',
-      //     color2: '#2C90EE',
-      //   },
-      // },
+      boxStyle:{
+        rx: 4,
+        ry: 4,
+        // stroke: '#2C90EE',
+        strokeWidth: 2,
+        gradient: {
+          color1: '#2C90EE',
+          color2: '#2C90EE',
+        },
+      },
     },
   };
 
@@ -64,5 +63,5 @@ function BarD3 ({  data }) {
     );
   };
   
-  export default BarD3;
+  export default BarChart;
 

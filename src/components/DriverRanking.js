@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import '../components/RemoveScrollBar.css'
+import '../components/Remove.css'
 
 function createData(num, name, round) {
   return { num, name, round };

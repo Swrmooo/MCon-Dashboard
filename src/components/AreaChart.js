@@ -49,7 +49,7 @@ function Graph({ data }) {
         data={chartData}
         options={options}
         width={'100%'}
-        height="280px"
+        height="300px"
       />
     </div>
   );

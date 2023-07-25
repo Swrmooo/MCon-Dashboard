@@ -21,8 +21,8 @@ function App() {
       </Routes>
     </Router> */}
     {/* <Dash1/> */}
-    <Dash2/>
-    {/* <Dash3/> */}
+    {/* <Dash2/> */}
+    <Dash3/>
     {/* <Dash4/> */}
     {/* <Dash5/> */}
    </div>

@@ -12,7 +12,7 @@ import st03 from '../assets/Statust Process_03.png';
 import st04 from '../assets/Statust Process_04.png';
 import st05 from '../assets/Statust Process_05.png';
 import stRed from '../assets/Statust Process_Red_all.png';
-import '../components/ListD2.css'
+import '../components/Remove.css'
 
 
 

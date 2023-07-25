@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Pie from '../components/PieD5'
-import Bar from '../components/BarD5'
-import List from '../components/ListD5'
+import Pie from '../components/PieDriver'
+import Bar from '../components/BarDriver'
+import List from '../components/TableDriver'
 import axios from 'axios'
-import '../components/RemoveScrollBar.css'
+import '../components/Remove.css'
+import BarChart from '../components/BarChart'
 
 export default function Dashboard() {
 

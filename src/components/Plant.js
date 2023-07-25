@@ -73,7 +73,6 @@ function Plant( {data} ) {
         
           return filteredData;
       };
-      // CommonJS
     const Swal = require('sweetalert2')
     
     const handleBoxItemClick = (index) => {
@@ -85,9 +84,6 @@ function Plant( {data} ) {
         for (let i = 0; i < plant.numOut.length; i++) {
             for (let key in plant.numOut[i]) {
               const value = plant.numOut[i][key];
-            //   textArr.push(`${key}`);
-            //   numberArr.push(value);
-            //   text += key+" "+value+"\n";
             text +=(`<div style="color: black; display: flex; justify-content: space-between; font-size: 25px; padding: 0px; margin: 0px;">
                 <p> ${key} </p>
                 <p> ${value} </p>
@@ -104,9 +100,9 @@ function Plant( {data} ) {
                 `,
             width: 400,
             padding: '2em',
-            color: '#055ACB',
+            color: '#316DC6',
             backdrop: `rgba(0, 0, 0, 0.5) `,
-            confirmButtonColor: '#055ACB',
+            confirmButtonColor: '#316DC6',
             customClass: {
                 container: 'custom-swal-container',
                 title: 'custom-swal-title',
@@ -117,12 +113,11 @@ function Plant( {data} ) {
         });
         };
       
-    
   return (
     
-    <div className='plant' style={{maxHeight: "630px", overflowY: "auto"}}>
+    <div className='plant' style={{position:'relative',maxHeight: "580px",overflowY: 'auto'}}>
 
-        <div className='searhBar' style={{position:'fixed',width:'755px',backgroundColor:'white'}}>
+        <div className='searhBar' style={{position:'absolute'}}>
             <div style={{position: 'relative',color:"black"}}>
                 <FontAwesomeIcon icon={faSearch} style={{color:'lightgrey' , position: 'absolute', left: '15px', top: '50%', transform: 'translateY(70%)'}} />
             </div>
@@ -139,7 +134,7 @@ function Plant( {data} ) {
                     </select>
                 </div>
 
-                <div className="dropdown" >
+                <div className="dropdown" style={{left:'0px'}} >
                     {value && data.filter(item => {
                         const searchTerm = value.toLowerCase();
                         const word = item.name.toLowerCase();
@@ -154,7 +149,7 @@ function Plant( {data} ) {
             </div>
         </div> 
 
-        <div className='Box' style={{display:'grid',gridTemplateColumns:'1fr 1fr', rowGap:'10px' ,textAlign:"center", marginTop:'50px'}} >
+        <div className='Box' style={{display:'grid',gridTemplateColumns:'0fr 0fr', columnGap:'20px',rowGap:'20px' ,textAlign:"center",padding:'45px 8px 10px 10px'}} >
             {filterData(data).map((plantData, index) => (
                 <div className='Box-item' key={plantData.name} onClick={() => handleBoxItemClick(index)}>
                     <div className='Box-header'>แพล้นท์{plantData.name}</div>
@@ -162,8 +157,8 @@ function Plant( {data} ) {
                         <div style={{display:'flex',flexDirection:'row',justifyContent:'space-around',marginTop:'30px'}}>
                             <div><img style={{width:'80px'}} src={plantIcon} alt="Plant Icon" /></div>
                             <div className='delivery'>
-                                <div style={{color:'#255294', fontWeight:'bold'}}>Delivery Volume:</div>
-                                <div style={{color:'#255294', fontWeight:'bold',fontSize:'45px'}}>{plantData.total.toLocaleString()}</div>
+                                <div style={{color:'#316DC6', fontWeight:'bold'}}>Delivery Volume</div>
+                                <div style={{color:'#316DC6', fontWeight:'bold',fontSize:'60px'}}>{plantData.total.toLocaleString()}</div>
                             </div>
                         </div>
                     </div>

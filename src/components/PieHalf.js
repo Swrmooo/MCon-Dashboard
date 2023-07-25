@@ -2,27 +2,36 @@ import React, { useEffect, useState } from 'react';
 import { Chart } from 'react-google-charts';
 
 
+
 function Radia({  num, numTotal, title, colors }) {
   
   const data = [
     ["Task", "Number"],
     ["จำนวนที่ทำตอนนี้", num, ],
     ["จำนวนทั้งหมด", numTotal, ],
-    // [null, 50]
-
   ];
   
   const options = {
     colors: colors,
-    height:400,
+    height: 400,
     legend: 'none',
     pieHole: 0.6,
     pieStartAngle: 270,
     pieSliceText: 'value',
+      legend: {
+        position: 'labeled'
+      },
+
+    backgroundColor: 'transparent',
+    pieSliceTextStyle:{
+      fontSize: 20,
+      color: 'red',
+    },
     slices: {
        1: { color: 'transparent',},
     },
     tooltip: { isHtml: true },
+    
   };
 
   // border:'1px dashed'
@@ -33,7 +42,6 @@ function Radia({  num, numTotal, title, colors }) {
       </div>
 
       <div className='chart' style={{position:'relative'}}>
-
         <div className='pieChart' style={{marginTop:'20px'}}>
           <Chart
             chartType="PieChart"
@@ -41,7 +49,7 @@ function Radia({  num, numTotal, title, colors }) {
             loader={<div>Loading Chart...</div>}
             options={options}
             width={"100%"}
-          />
+          />   
         </div>
       </div>
 </div> 
@@ -49,3 +57,11 @@ function Radia({  num, numTotal, title, colors }) {
 }
 
 export default Radia;
+
+
+
+
+
+
+
+
