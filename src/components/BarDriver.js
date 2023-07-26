@@ -5,19 +5,26 @@ import { Chart } from "react-google-charts"
 export default function Bar( {data} ) {
 
   var chartData = [
-    ['แพล้นท์', 'จำนวน', 'จำนวน (อันที่ 2)', { role: 'style' }],
-    ...data.plant.map(plant => [plant.name, plant.driver[0][0], null, '#F49470']),
-    ['รถไม่ปฏิบัติงาน', null, data.driverTotal[0].out, '#AE4C14'],
+    ['แพล้นท์',     'จำนวน',              { role: 'annotation' },   'จำนวน2',                  { role: 'annotation' },           { role: 'style' }],
+    ...data.plant.map(plant => 
+    [plant.name,    plant.driver[0][0],  plant.driver[0][0],       null,                      null  ,                          '#F49470']),
+    ['รถไม่ปฏิบัติงาน', null,                null,                     data.driverTotal[0].out,   data.driverTotal[0].out,         '#AE4C14'],
   ];
 
   // ตำแหน่งของคอลัมน์ 'จำนวน (อันที่ 2)' และคอลัมน์ 'จำนวน' ในแต่ละแถว
+
   chartData.forEach((row, index) => {
     if (index !== 0 && index !== chartData.length - 1) {
       row[1] = chartData[index][1];
     }
   });
 
-  
+  // var chartData = [
+  //   ['แพล้นท์',      'รถปฏิบัติงาน',                      'จำนวน',                   { role: 'annotation' }, { role: 'style' }],
+  //   ...data.plant.map(plant => 
+  //   [plant.name,    null,       plant.driver[0][0],       plant.driver[0][0].toString(),  '#F49470']),
+  //   ['รถไม่ปฏิบัติงาน', data.driverTotal[0].out,  data.driverTotal[0].out,  data.driverTotal[0].out.toString(), '#AE4C14'],
+  // ];
 
   
 
@@ -37,8 +44,9 @@ export default function Bar( {data} ) {
         bold: true,
       },
     },
+    // #F49470,#AE4C14
     series: {
-      0: { labelInLegend: 'รถปฏิบัติงาน' ,color: '#F49470'},
+      0: { labelInLegend: 'รถไม่ปฏิบัติงาน' ,color: '#F49470'},
       1: { labelInLegend: 'รถไม่ปฏิบัติงาน' ,color: '#AE4C14'},
     },
     hAxis: {

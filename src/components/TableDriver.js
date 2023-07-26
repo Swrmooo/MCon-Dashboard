@@ -48,12 +48,12 @@ export default function List( {data} ) {
         <TableBody >
           {formattedData.map((row) => (
             <TableRow key={row.num} sx={{}}>
-              <TableCell align="center"  sx={{ }}>{row.num}</TableCell>
+              <TableCell align="center"  sx={{ }}>{row.num.toLocaleString()}</TableCell>
               <TableCell align="center"  sx={{ }}>{row.car}</TableCell>
               <TableCell align="center"  sx={{ }}>{row.name}</TableCell>
-              <TableCell align="center"  sx={{ }}>{row.transport}</TableCell>
-              <TableCell align="center"  sx={{ }}>{row.q}</TableCell>
-              <TableCell align="center"  sx={{ }}>{row.km}</TableCell>
+              <TableCell align="center"  sx={{ }}>{row.transport.toLocaleString()}</TableCell>
+              <TableCell align="center"  sx={{ }}>{row.q.toLocaleString()}</TableCell>
+              <TableCell align="center"  sx={{ }}>{row.km.toLocaleString()}</TableCell>
             </TableRow>
           ))}
         </TableBody>
